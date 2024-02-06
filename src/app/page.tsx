@@ -2,6 +2,8 @@ import OfferCard from '@/components/offerCard/offerCard';
 import SearchBar from '@/components/searchBar/searchBar';
 import "./page.css";
 
+/* dfsfdsdfsdfsdfsdfsdfHFGDHFGDHFGHFGH */
+
 export default function Home() {
   return (
 
