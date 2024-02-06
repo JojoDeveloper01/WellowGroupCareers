@@ -1,18 +1,17 @@
 "use client"
+import apiJob from '@/API/jobConvo';
 import Form from "@/components/module/formulario";
 import Link from 'next/link';
 import { useState } from 'react';
 import ReactDOM from 'react-dom';
 import "./offerCard.css";
 
-
 const OfferCard_Array = () => {
-
   return (
     <div>
 
       <OfferCard
-        title="Empregado/a de Limpeza (M/F/D) Part-time | Aveiro"
+        title={apiJob.title}
         location="Lisboa - Lisboa | Knower™ Tech | Híbrido | 22/11/2023"
         description=
         {

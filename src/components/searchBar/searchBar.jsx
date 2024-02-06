@@ -1,7 +1,7 @@
 "use client"
 
 
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import "./searchBar.css";
 
@@ -54,7 +54,6 @@ const SearchBar = () => {
     }, []);
 
 
-    
     const [scrollPosition, setScrollPosition] = useState(0);
     const [navbarFixed, setNavbarFixed] = useState(false);
     const navbarRef = useRef(null);
@@ -63,16 +62,20 @@ const SearchBar = () => {
     useEffect(() => {
         const handleScroll = () => {
             const currentPosition = window.pageYOffset;
-            const backgroundRect = backgroundRef.current.getBoundingClientRect();
-            const isMobile = window.innerWidth <= 768; // Defina o limite para dispositivos móveis conforme necessário
+            // Adiciona uma condição para verificar se o backgroundRef.current existe
+            if (backgroundRef.current) {
+                const backgroundRect = backgroundRef.current.getBoundingClientRect();
+                const isMobile = window.innerWidth <= 768; // Defina o limite para dispositivos móveis conforme necessário
 
-            // Verifica se o navbar deve ser fixo quando a posição de rolagem for maior que a altura do background-image
-            if (!isMobile) {
-                setNavbarFixed(currentPosition > backgroundRect.height);
+                // Verifica se o navbar deve ser fixo quando a posição de rolagem for maior que a altura do background-image
+                if (!isMobile) {
+                    setNavbarFixed(currentPosition > backgroundRect.height);
+                }
             }
 
             setScrollPosition(currentPosition);
         };
+
 
         const handleResize = () => {
             const isMobile = window.innerWidth <= 768; // Defina o limite para dispositivos móveis conforme necessário
@@ -92,7 +95,6 @@ const SearchBar = () => {
         };
     }, [navbarFixed]);
 
-    
     const divRef = useRef(null);
 
     useEffect(() => {
@@ -104,23 +106,23 @@ const SearchBar = () => {
             divRef.current.style.height = '';
         }
     }, [navbarFixed]);
-    
+
     return (
         <div>
 
             <section className="background-image" ref={backgroundRef}>
                 <div className="background-settings">
                     <div className="title-background">
-                        <h2>   
+                        <h2>
                             Junte-se e trabalhe connosco!
                         </h2>
-                        <h3>   
+                        <h3>
                             Mais de 100 oportunidades de pertencer a uma das empresas mais felizes
                         </h3>
                     </div>
                 </div>
             </section>
-            
+
             <div ref={divRef}></div>
 
             <div className={`navbar ${navbarFixed ? 'fixed' : ''}`} ref={navbarRef}>
@@ -129,11 +131,11 @@ const SearchBar = () => {
                         <div className="flex justify-between md:flex-row flex-col md:items-center">
 
                             <input
-                            type="text"
-                            placeholder="Pesquisar ofertas"
-                            className="max w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none mb-2 md:mb-0 md:mr-6"
-                            style={{ height: '52px' }}/>
-                            
+                                type="text"
+                                placeholder="Pesquisar ofertas"
+                                className="max w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none mb-2 md:mb-0 md:mr-6"
+                                style={{ height: '52px' }} />
+
 
                             <div ref={dropdownRef} className="max w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none mb-2 md:mb-0 md:mr-2 custom-select selected-option" onClick={toggleDropdown}>
 
@@ -165,8 +167,8 @@ const SearchBar = () => {
                                 )}
                             </div>
 
-                            <button className="max w-full px-4 py-2 bg-purple-600 text-white rounded-md focus:outline-none" 
-                            style={{ height: '52px' }}>
+                            <button className="max w-full px-4 py-2 bg-purple-600 text-white rounded-md focus:outline-none"
+                                style={{ height: '52px' }}>
                                 Pesquisar
                             </button>
                         </div>
@@ -175,6 +177,6 @@ const SearchBar = () => {
             </div>
         </div>
     );
-  };
-  
+};
+
 export default SearchBar;
