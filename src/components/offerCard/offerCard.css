@@ -1,0 +1,50 @@
+.vertical-line {
+    border-left: 8px solid var(--purple-wellow);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transition: border-color 0.3s ease;
+}
+
+.relative:hover .vertical-line {
+    border-color: #4B0672;
+}
+
+.border-box {
+    border: 1px solid #3c055c;
+    transition: border-color 0.3s ease;
+}
+
+.border-box:hover {
+    border-color: #27033b; /* Nova cor da borda quando o mouse está sobre a caixa */
+}
+
+.btn-secondary {
+    background-color: #8566c2; /* Cor roxa mais clara */
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.9s ease;
+}
+  
+.btn-secondary:hover {
+    background-color: #6a4eaa; /* Cor roxa mais escura no hover */
+}
+
+.btn-primary {
+    background-color: var(--purple-wellow); /* Cor roxa */
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.9s ease;
+}
+
+.btn-primary:hover {
+    background-color: #4B0672; /* Cor roxa mais escura no hover */
+}

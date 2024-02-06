@@ -1,0 +1,49 @@
+				@font-face {
+					font-family: 'lucylia-sans';
+					src: url('./4067Lucylia-Sans.woff2') format('woff2');
+					font-display: auto;
+				}
+
+				.lucylia-sans {
+					font-family: 'lucylia-sans' !important;
+				}
+
+				h1,
+				h2,
+				h3,
+				h4,
+				h5,
+				h6,
+				.entry-title,
+				body.single-post .entry-title,
+				body.page .entry-title,
+				body.category .entry-title,
+				.widget-title,
+				.site-title,
+				.site-description,
+				body,
+				p,
+				blockquote,
+				li,
+				a,
+				strong,
+				b,
+				em,
+				.menu-footer-nav-1-container li a,
+				.menu-footer-nav-1-container li span,
+				#menu-footer-nav-1 li a,
+				#menu-footer-nav-1 li span,
+				.menu-footer-nav-2-container li a,
+				.menu-footer-nav-2-container li span,
+				#menu-footer-nav-2 li a,
+				#menu-footer-nav-2 li span,
+				.menu-footer-nav-3-container li a,
+				.menu-footer-nav-3-container li span,
+				#menu-footer-nav-3 li a,
+				#menu-footer-nav-3 li span,
+				.menu-primary-container li a,
+				.menu-primary-container li span,
+				#menu-primary li a,
+				#menu-primary li span {
+					font-family: 'lucylia-sans' !important;
+				}

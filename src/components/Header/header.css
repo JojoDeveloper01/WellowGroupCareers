@@ -1,0 +1,239 @@
+.active {
+  color: var(--green-wellow);
+}
+
+.menuNav div {
+  color: #2D2D2D;
+  text-align: left;
+  width: 100%;
+}
+
+div.menuNav>div {
+  margin: 0 1.5rem;
+}
+
+.leftLogo {
+  left: 3.5%;
+}
+
+.menuNav a {
+  font-size: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.menuNav .candidaturas {
+  background-color: var(--purple-wellow);
+  box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.06);
+  border-radius: 2em;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  z-index: 0;
+  margin: 0;
+  margin-left: 4%;
+  transition: background-color 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28),
+    transform 0.6s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.menuNav .candidaturas:hover {
+  background-color: #3FCBA6;
+  transform: translateY(-6%);
+}
+
+.menuNav .candidaturas a {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.menuNav .candidaturas a:hover {
+  color: #ffffff;
+  display: block;
+}
+
+.lenguages .lenguages-box {
+  width: 9.4rem;
+  opacity: 0;
+
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.lenguages .en {
+  position: absolute;
+  color: #7F7F7F;
+}
+
+.lenguages:hover>.pt {
+  color: var(--green-wellow);
+}
+
+.lenguages:hover .en:hover {
+  color: #000;
+}
+
+.lenguages:hover .lenguages-box {
+  display: block;
+  opacity: 1;
+}
+
+.searchButton:checked+.ld-module-dropdown {
+  display: block;
+}
+
+.ld-module-dropdown {
+  right: 9%;
+  top: 99%;
+  display: none;
+}
+
+.ld-search-form-container {
+  background-color: #fff;
+  width: 360px;
+  padding: 30px;
+  border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.ld-search-form {
+  line-height: 1;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.ld-search-form input {
+  width: 100%;
+  padding: 10px 20px 10px 30px;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  font-size: 16px;
+  letter-spacing: .025em;
+}
+
+.ld-search-form .input-icon {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: #b8beca;
+}
+
+.pos-abs {
+  position: absolute;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+@media only screen and (max-width: 1199px) {
+
+  .menuNav a {
+    color: #ffffff;
+  }
+
+  .text-header input,
+  .text-header button {
+    right: 3%;
+  }
+
+  .text-header input:checked+div.menuNav {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    height: 22rem;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    padding: 8rem 3rem;
+
+    background-color: #191D18;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.264);
+    transition: 0.3s cubic-bezier(0.26, 1.23, 0.83, 1.05);
+  }
+
+  .menuNav .candidaturas {
+    position: relative;
+    width: 20rem;
+    margin: 6px 0;
+  }
+
+  div.menuNav div {
+    margin: 12px 0;
+    color: #ffffff;
+    font-size: 1.1em;
+  }
+
+  .lenguages {
+    right: 15%;
+  }
+
+  .lenguages>* {
+    margin-top: 5px;
+  }
+
+  .lenguages .lenguages-box {
+    width: 90%;
+    height: 4rem;
+    top: 71%;
+    background: #191D18;
+    border-radius: 0;
+    transform: translateX(0);
+  }
+
+  .lenguages .en {
+    color: #ffffff;
+  }
+
+  .lenguages:hover .en:hover {
+    color: var(--green-wellow);
+  }
+
+  .lenguages:hover .lenguages-box {
+    display: none;
+    opacity: 0;
+  }
+
+  div.lenguages input:checked+.lenguages-box {
+    display: block;
+    opacity: 1;
+  }
+
+}
+
+@media only screen and (max-width: 575px) {
+
+  main {
+    --height-header: 8rem;
+  }
+
+  .menuNav .candidaturas {
+    width: 78vw;
+  }
+
+  .leftLogo {
+    left: 7%;
+  }
+
+  .ld-search-form-container {
+    width: 78vw;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  main {
+    --height-header: 6.5rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  main {
+    --height-header: 6rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  main {
+    --height-header: 5.5rem;
+  }
+}

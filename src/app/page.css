@@ -1,0 +1,109 @@
+.container {
+    max-width: none;
+    width: 100%;
+    padding: 0;
+}
+
+.background-image {
+    background-image: url(https://wellowgroup.com/wp-content/uploads/2022/06/Wellow_Site_Background_Frase-01.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background-attachment: fixed;
+
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 120px 0px 100px 0px;
+}
+
+.title-background {
+    margin: 0px 0px 10px 0px;
+    text-align: center;
+}
+
+.title-background h2 {
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 0px 0px 15px 0px;
+    color: #FFFFFF;
+}
+
+.title-background h3 {
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 0px 0px 15px 0px;
+    color: #FFFFFF;
+}
+
+.background-settings {
+    max-width: 1170px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+}
+
+@media (max-width: 1199px) {
+
+    .background-settings {
+        max-width: 1024px;
+    }
+
+    .title-background h2 {
+        font-size: 35px;
+    }
+
+    .title-background h3 {
+        font-size: 15px;
+    }
+
+    .background-image {
+        padding: 100px 0px 100px 0px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .title-background h2 {
+        font-size: 30px;
+    }
+
+    .title-background h3 {
+        font-size: 15px;
+    }
+
+    .background-image {
+        padding: 70px 0px 70px 0px;
+    }
+}
+
+.search-field {
+    height: 45px;
+}
+
+@media (min-width: 768px) {
+    .search-section {
+        justify-content: flex-start;
+    }
+}
+
+
+.section-offers {
+    padding: 40px 0px 40px 0px;
+
+}
+
+.section-title {
+    text-align: center;
+    margin: 20px 0px 25px 0px;
+    letter-spacing: 1px;
+    color: #5C068C;
+    font-size: 41px;
+    font-weight: 600;
+
+}
+
+
+
