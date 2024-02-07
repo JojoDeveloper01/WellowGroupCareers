@@ -8,18 +8,16 @@ import ReactDOM from 'react-dom';
 import "./offerCard.css";
 
 const OfferCard_Array = () => {
-
   const [offers, setOffers] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await getJobs();
-        console.log(response.data);
-        setOffers(response.data); // Supondo que a resposta da API seja um array de ofertas
+        const response = await getJobs(); // Aguarde a resolução da Promise
+        console.log(response);
+        setOffers(response.results); // Atualize o estado com a matriz de ofertas da resposta da API
       } catch (error) {
         console.error('Error fetching data:', error);
-        return NextResponse.error();
       }
     };
 
@@ -32,8 +30,18 @@ const OfferCard_Array = () => {
         <OfferCard
           key={index}
           title={offer.title}
-          location={offer.location}
-          description={offer.description}
+          location={[
+            <span className='location'>{offer.city}</span>,
+            <span className='location'> - </span>,
+            <span className='location'>{offer.state}</span>,
+            <span className='location'> | </span>,
+            <span className='location'>{offer.branch}</span>,
+            <span className='location'> | </span>,
+            <span className='location'> {offer.sla_date}</span>,
+            <span className='location'> | </span>,
+            <span className='location'>{offer.custom_fields[0].answer}</span>,
+          ]}
+          description={offer.description} 
         />
       ))}
     </div>
@@ -69,9 +77,7 @@ const OfferCard = ({ title, location, description }) => {
               </button>
             </div>
             <div className="text-gray-600 mt-2">{location}</div>
-            <div className={`text-gray-700 mt-4 ${showDetails ? 'h-auto' : 'h-0 overflow-hidden'}`} style={{ transition: 'all .5s' }}>
-              {description}
-            </div>
+            <div className={`description text-gray-700 mt-4 ${showDetails ? 'h-auto' : 'h-0 overflow-hidden'}`} style={{ transition: 'all .5s' }} dangerouslySetInnerHTML={{ __html: description }}></div>
           </div>
           <div className="flex justify-end lg:w-1/3" style={{ margin: '10px 10px 0px 0px' }}>
             <Link href="./mais-informacoes">

@@ -1,3 +1,13 @@
+div.description p {
+    font-size: 16px !important;  /* Define o tamanho da fonte */
+    margin: 1rem 0 0 0 !important; /* Define as margens do parágrafo */
+}
+
+.location {
+    opacity: .7;
+    margin: 0 3px;
+}
+
 .vertical-line {
     border-left: 8px solid var(--purple-wellow);
     height: 100%;
