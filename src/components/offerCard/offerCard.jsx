@@ -1,66 +1,41 @@
 "use client"
-import apiJob from '@/API/jobConvo';
+import { getJobs } from '@/API/getJob';
 import Form from "@/components/module/formulario";
 import Link from 'next/link';
-import { useState } from 'react';
+import { NextResponse } from 'next/server';
+import { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import "./offerCard.css";
 
 const OfferCard_Array = () => {
+
+  const [offers, setOffers] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await getJobs();
+        console.log(response.data);
+        setOffers(response.data); // Supondo que a resposta da API seja um array de ofertas
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        return NextResponse.error();
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div>
-
-      <OfferCard
-        title={apiJob.title}
-        location="Lisboa - Lisboa | Knower™ Tech | Híbrido | 22/11/2023"
-        description=
-        {
-          <>
-            <p>A Knower™ está atualmente em processo de recrutamento de Empregado/a de limpeza (M/F/D) para empresa nossa cliente.<br /><br /></p>
-            <p>Os Empregados de Limpeza (M/F/D) serão responsáveis por diversas tarefas inerentes a categoria profissional.<br /><br /></p>
-            <p>Local de trabalho: Aveiro.</p>
-          </>
-        }
-      />
-
-      <OfferCard
-        title="Empregado/a de Limpeza (M/F/D) Part-time | Aveiro"
-        location="Lisboa - Lisboa | Knower™ Tech | Híbrido | 22/11/2023"
-        description=
-        {
-          <>
-            <p>A Knower™ está atualmente em processo de recrutamento de Empregado/a de limpeza (M/F/D) para empresa nossa cliente.<br /><br /></p>
-            <p>Os Empregados de Limpeza (M/F/D) serão responsáveis por diversas tarefas inerentes a categoria profissional.<br /><br /></p>
-            <p>Local de trabalho: Aveiro.</p>
-          </>
-        }
-      />
-
-      <OfferCard
-        title="Empregado/a de Limpeza (M/F/D) Part-time | Aveiro"
-        location="Lisboa - Lisboa | Knower™ Tech | Híbrido | 22/11/2023"
-        description=
-        {
-          <>
-            <p>A Knower™ está atualmente em processo de recrutamento de Empregado/a de limpeza (M/F/D) para empresa nossa cliente.<br /><br /></p>
-            <p>Os Empregados de Limpeza (M/F/D) serão responsáveis por diversas tarefas inerentes a categoria profissional.<br /><br /></p>
-            <p>Local de trabalho: Aveiro.</p>
-          </>
-        }
-      />
-
-      <OfferCard
-        title="Empregado/a de Limpeza (M/F/D) Part-time | Aveiro"
-        location="Lisboa - Lisboa | Knower™ Tech | Híbrido | 22/11/2023"
-        description=
-        {
-          <>
-            <p>A Knower™ está atualmente em processo de recrutamento de Empregado/a de limpeza (M/F/D) para empresa nossa cliente.<br /><br /></p>
-            <p>Os Empregados de Limpeza (M/F/D) serão responsáveis por diversas tarefas inerentes a categoria profissional.<br /><br /></p>
-            <p>Local de trabalho: Aveiro.</p>
-          </>
-        }
-      />
+      {offers.map((offer, index) => (
+        <OfferCard
+          key={index}
+          title={offer.title}
+          location={offer.location}
+          description={offer.description}
+        />
+      ))}
     </div>
   );
 };
@@ -79,15 +54,14 @@ const OfferCard = ({ title, location, description }) => {
 
   return (
     <div className="flex flex-col items-center justify-center" style={{ padding: '0px 20px 0px 20px' }}>
-      <div className="relative w-full max-w-md bg-white rounded-lg shadow-lg overflow-hidden border-box mb-4" style={{ maxWidth: '1200px' }}>
+      <div className="hoverdiv relative w-full max-w-md bg-white rounded-lg shadow-lg overflow-hidden border-box mb-4" style={{ maxWidth: '1200px' }}>
         <div className="vertical-line"></div>
-        <div className="flex flex-col lg:flex-row justify-between" style={{ padding: '24px 24px 15px' }}>
+        <div className="flex flex-col lg:flex-row justify-between" style={{ padding: '24px 24px 15px', color: '#4c4f51' }}>
           <div className="flex flex-col lg:w-2/3 lg:pr-4" style={{ padding: '0px 10px 0px 0px' }}>
-            <div className="flex items-center">
+            <div className="flex items-center" onClick={() => setShowDetails(!showDetails)} style={{ cursor: 'pointer' }}>
               <h2 className="mr-2 text-lg lg:text-xl xl:text-2xl">{title}</h2>
               <button
                 className="text-gray-600 focus:outline-none focus:text-gray-700"
-                onClick={() => setShowDetails(!showDetails)}
               >
                 <svg className={`h-6 w-6 transition-transform transform ${showDetails ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -95,7 +69,7 @@ const OfferCard = ({ title, location, description }) => {
               </button>
             </div>
             <div className="text-gray-600 mt-2">{location}</div>
-            <div className={`text-gray-700 mt-4 ${showDetails ? 'h-auto' : 'h-0 overflow-hidden'}`} style={{ transition: 'height 0.3s ease' }}>
+            <div className={`text-gray-700 mt-4 ${showDetails ? 'h-auto' : 'h-0 overflow-hidden'}`} style={{ transition: 'all .5s' }}>
               {description}
             </div>
           </div>
