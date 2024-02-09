@@ -5,7 +5,8 @@ import { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './mais-info.css';
 
-export default function Mais_Info() {
+
+export default function jobInfo() {
   const [showForm, setShowForm] = useState(false);
 
   const handleButtonClick = () => {
