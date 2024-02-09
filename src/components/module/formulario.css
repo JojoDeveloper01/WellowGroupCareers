@@ -1,0 +1,154 @@
+.button-section {
+    margin: 0px 40px;
+    display: flex;
+    height: 80px;
+    align-items: center;
+    flex-shrink: 0;
+    align-self: stretch;
+}
+
+.button {
+    margin: 0px 8px 0px 0px;
+    padding: 10px 20px;
+    background-color: #6909A1;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.button:hover {
+    background-color: #440767;
+}
+
+button:disabled {
+    opacity: 0.5; /* Reduz a opacidade para indicar que o botão está desabilitado */
+    cursor: not-allowed; /* Altera o cursor para indicar que o botão está desabilitado */
+    /* Adicione outros estilos conforme necessário */
+}
+
+.modal-body {
+    position: relative;
+    width: 580px;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    pointer-events: auto;
+    background: #FFF;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 0.3rem;
+    outline: 0;
+    padding: 1rem;
+}
+
+.barNext-level {
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.barLevel {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+}
+
+.barLevel h2, .write-section.title-section {
+    color: #656565 !important;
+    text-align: center;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.barLevel .round {
+    border-radius: 50%;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+
+    border: 1px solid #6909A1;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.barLevel .round.level_here {
+    background: #6909A1;
+    color: #FFF;
+}
+
+.barLevel .bar {
+    width: 40px;
+    height: 2px;
+    flex-shrink: 0;
+    background: rgba(27, 26, 26, 0.55);
+}
+
+.barLevel .bar.min {
+    width: 15px;
+}
+
+.write-section {
+    margin: 0px 40px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    flex-shrink: 0;
+    align-self: stretch;
+}
+
+.write-section input {
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    height: 52px;
+    border: 1px solid #ddd;
+}
+
+.write-section input:focus {
+    border-color: #440767;
+    outline: 0;
+  }
+
+.write-section h2 {
+    margin-bottom: 0.5rem;
+    font-size: 18px;
+}
+
+.write-section.title-section h2 {
+    font-size: 20px !important;
+    margin-top: 0.8rem;
+}
+
+span.req {
+    color: #F00;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
