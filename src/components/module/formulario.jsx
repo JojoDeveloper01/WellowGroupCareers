@@ -1,8 +1,8 @@
 
 "use client"
-import './formulario.css';
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from 'react';
+import './formulario.css';
 
 const Form = ({ isOpen, onClose }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -54,180 +54,180 @@ const Form = ({ isOpen, onClose }) => {
             variants={formVariants}
           >
 
-              {currentPage === 1 && (
-                <div id="reservar">
-                  {/* Conteúdo da primeira página/secção (Dados Pessoais) */}
+            {currentPage === 1 && (
+              <form id="reservar">
+                {/* Conteúdo da primeira página/secção (Dados Pessoais) */}
 
-                  <div className='barNext-level'>
-                    <div className='barLevel'>
-                      <div className='round level_here'>1</div>
-                      <h2>Dados Pessoais</h2>
-                      <div className='bar'></div>
-                    </div>
-
-                    <div className='barLevel'>
-                      <div className='round'>2</div>
-                      <h2>Qualificações</h2>
-                      <div className='bar'></div>
-                    </div>
-
-                    <div className='barLevel'>
-                      <div className='round'>3</div>
-                    </div>
+                <div className='barNext-level'>
+                  <div className='barLevel'>
+                    <div className='round level_here'>1</div>
+                    <h2>Dados Pessoais</h2>
+                    <div className='bar'></div>
                   </div>
 
-                  <section className='write-section'>
-                    <h2>Nome<span className='req'> *</span></h2>
-                    <input></input>
-                  </section>
-
-                  <section className='write-section'>
-                    <h2>Apelido</h2>
-                    <input></input>
-                  </section>
-
-                  <section className='write-section'>
-                    <h2>Contacto</h2>
-                    <input></input>
-                  </section>
-
-                  <section className='write-section'>
-                    <h2>Email<span className='req'> *</span></h2>
-                    <input></input>
-                  </section>
-
-                  <section className='write-section'>
-                    <h2>Linkedin</h2>
-                    <input></input>
-                  </section>
-                </div>
-              )}
-              {currentPage === 2 && (
-                <div id="reservar">
-                  {/* Conteúdo da segunda página/secção (Qualificações) */}
-
-                  <div className='barNext-level'>
-                    <div className='barLevel'>
-                      <div className='round'>1</div>
-                      <div className='bar min'></div>
-                    </div>
-
-                    <div className='barLevel'>
-                      <div className='round level_here'>2</div>
-                      <h2>Qualificações</h2>
-                      <div className='bar min'></div>
-                    </div>
-
-                    <div className='barLevel'>
-                      <div className='round'>3</div>
-                      <h2>Linguagens e Mobilidade</h2>
-                    </div>
+                  <div className='barLevel'>
+                    <div className='round'>2</div>
+                    <h2>Qualificações</h2>
+                    <div className='bar'></div>
                   </div>
 
-                  <section className='write-section title-section'>
-                    <h2>Formação Acadêmica</h2>
-                  </section>
-
-
-                  <section className='write-section'>
-                    <h2>Nome Instituição</h2>
-                    <input></input>
-                  </section>
-
-                  <section className='write-section'>
-                    <h2>Designação de Curso</h2>
-                    <input></input>
-                  </section>
-
-
-                  <section className='write-section title-section'>
-                    <h2>Experiência Professional Relevante</h2>
-                  </section>
-
-
-                  <section className='write-section'>
-                    <h2>Nome Empresa</h2>
-                    <input></input>
-                  </section>
-
-                  <section className='write-section'>
-                    <h2>Função</h2>
-                    <input></input>
-                  </section>
-
+                  <div className='barLevel'>
+                    <div className='round'>3</div>
+                  </div>
                 </div>
-              )}
-              {currentPage === 3 && (
-                <div id="reservar">
-                  {/* Conteúdo da terceira página/secção (Linguagem e Mobilidade) */}
 
-                  <div className='barNext-level'>
-                    <div className='barLevel'>
-                      <div className='round'>1</div>
-                      <div className='bar min'></div>
-                    </div>
+                <section className='write-section'>
+                  <h2>Nome<span className='req'> *</span></h2>
+                  <input></input>
+                </section>
 
-                    <div className='barLevel'>
-                      <div className='round'>2</div>
-                      <h2>Qualificações</h2>
-                      <div className='bar min'></div>
-                    </div>
+                <section className='write-section'>
+                  <h2>Apelido</h2>
+                  <input></input>
+                </section>
 
-                    <div className='barLevel'>
-                      <div className='round level_here'>3</div>
-                      <h2>Linguagens e Mobilidade</h2>
-                    </div>
+                <section className='write-section'>
+                  <h2>Contacto</h2>
+                  <input></input>
+                </section>
+
+                <section className='write-section'>
+                  <h2>Email<span className='req'> *</span></h2>
+                  <input></input>
+                </section>
+
+                <section className='write-section'>
+                  <h2>Linkedin</h2>
+                  <input></input>
+                </section>
+              </form>
+            )}
+            {currentPage === 2 && (
+              <div id="reservar">
+                {/* Conteúdo da segunda página/secção (Qualificações) */}
+
+                <div className='barNext-level'>
+                  <div className='barLevel'>
+                    <div className='round'>1</div>
+                    <div className='bar min'></div>
                   </div>
 
-                  <section className='write-section'>
-                    <h2>Nome<span className='req'> *</span></h2>
-                    <input></input>
-                  </section>
+                  <div className='barLevel'>
+                    <div className='round level_here'>2</div>
+                    <h2>Qualificações</h2>
+                    <div className='bar min'></div>
+                  </div>
 
-                  <section className='write-section'>
-                    <h2>Apelido</h2>
-                    <input></input>
-                  </section>
-
-                  <section className='write-section'>
-                    <h2>Contacto</h2>
-                    <input></input>
-                  </section>
-
-                  <section className='write-section'>
-                    <h2>Email<span className='req'> *</span></h2>
-                    <input></input>
-                  </section>
-
-                  <section className='write-section'>
-                    <h2>Linkedin</h2>
-                    <input></input>
-                  </section>
+                  <div className='barLevel'>
+                    <div className='round'>3</div>
+                    <h2>Linguagens e Mobilidade</h2>
+                  </div>
                 </div>
-              )}
 
-              {/* Botões de navegação entre as páginas/secções */}
-              <div className="button-section flex">
-                {currentPage == 1 && (
-                  <div>
-                    <button className="button" disabled onClick={handlePreviousPage}>Anterior</button>
-                    <button className="button" onClick={handleNextPage}>Seguinte</button>
-                  </div> 
-                )}
-                {currentPage == 2 && (
-                  <div>
-                    <button className="button" onClick={handlePreviousPage}>Anterior</button>
-                    <button className="button" onClick={handleNextPage}>Seguinte</button>
-                  </div> 
-                )}
-                {currentPage == 3 && (
-                  <div>
-                    <button className="button" onClick={handlePreviousPage}>Anterior</button>
-                    <button className="button">Enviar</button>
-                  </div> 
-                )}
+                <section className='write-section title-section'>
+                  <h2>Formação Acadêmica</h2>
+                </section>
+
+
+                <section className='write-section'>
+                  <h2>Nome Instituição</h2>
+                  <input></input>
+                </section>
+
+                <section className='write-section'>
+                  <h2>Designação de Curso</h2>
+                  <input></input>
+                </section>
+
+
+                <section className='write-section title-section'>
+                  <h2>Experiência Professional Relevante</h2>
+                </section>
+
+
+                <section className='write-section'>
+                  <h2>Nome Empresa</h2>
+                  <input></input>
+                </section>
+
+                <section className='write-section'>
+                  <h2>Função</h2>
+                  <input></input>
+                </section>
 
               </div>
+            )}
+            {currentPage === 3 && (
+              <form id="reservar">
+                {/* Conteúdo da terceira página/secção (Linguagem e Mobilidade) */}
+
+                <div className='barNext-level'>
+                  <div className='barLevel'>
+                    <div className='round'>1</div>
+                    <div className='bar min'></div>
+                  </div>
+
+                  <div className='barLevel'>
+                    <div className='round'>2</div>
+                    <h2>Qualificações</h2>
+                    <div className='bar min'></div>
+                  </div>
+
+                  <div className='barLevel'>
+                    <div className='round level_here'>3</div>
+                    <h2>Linguagens e Mobilidade</h2>
+                  </div>
+                </div>
+
+                <section className='write-section'>
+                  <h2>Nome<span className='req'> *</span></h2>
+                  <input></input>
+                </section>
+
+                <section className='write-section'>
+                  <h2>Apelido</h2>
+                  <input></input>
+                </section>
+
+                <section className='write-section'>
+                  <h2>Contacto</h2>
+                  <input></input>
+                </section>
+
+                <section className='write-section'>
+                  <h2>Email<span className='req'> *</span></h2>
+                  <input></input>
+                </section>
+
+                <section className='write-section'>
+                  <h2>Linkedin</h2>
+                  <input></input>
+                </section>
+              </form>
+            )}
+
+            {/* Botões de navegação entre as páginas/secções */}
+            <form className="button-section flex">
+              {currentPage == 1 && (
+                <div>
+                  <button className="button" disabled onClick={handlePreviousPage}>Anterior</button>
+                  <button className="button" onClick={handleNextPage}>Seguinte</button>
+                </div>
+              )}
+              {currentPage == 2 && (
+                <div>
+                  <button className="button" onClick={handlePreviousPage}>Anterior</button>
+                  <button className="button" onClick={handleNextPage}>Seguinte</button>
+                </div>
+              )}
+              {currentPage == 3 && (
+                <div>
+                  <button className="button" onClick={handlePreviousPage}>Anterior</button>
+                  <button className="button">Enviar</button>
+                </div>
+              )}
+
+            </form>
           </motion.div>
         </motion.section>
       )}
