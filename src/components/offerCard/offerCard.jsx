@@ -1,10 +1,8 @@
 "use client";
-import { getJobs } from "@/API/getJob";
-import Form from "@/components/module/formulario";
-import { useEffect, useState } from "react";
+import { useState } from 'react';
 import ReactDOM from "react-dom";
-import ButtonOffer from "./buttonOffer";
-import LoadingCard from './loadingCard';
+import Form from "../module/formulario";
+import ButtonOffer from "./ButtonOffer/buttonOffer";
 import "./offerCard.css";
 
 const OfferCard = ({ title, location, description, job }) => {
@@ -28,9 +26,7 @@ const OfferCard = ({ title, location, description, job }) => {
             <div className='flex items-center cursor-pointer' onClick={() => setShowDetails(!showDetails)}>
               <h2 className='mr-2 text-lg lg:text-xl xl:text-2xl'>{title}</h2>
               <button className='text-gray-600 focus:outline-none focus:text-gray-700'>
-                <svg className={`h-6 w-6 transition-transform transform ${showDetails ? "rotate-180" : ""}`} fill='none' viewBox='0 0 24 24' stroke='currentColor'>
-                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M19 9l-7 7-7-7' />
-                </svg>
+                <svg className={`h-6 w-6 transition-transform transform ${showDetails ? "rotate-180" : ""}`} xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z" /></svg>
               </button>
             </div>
             <div className='text-gray-600 mt-2'>{location}</div>
@@ -49,67 +45,4 @@ const OfferCard = ({ title, location, description, job }) => {
   );
 };
 
-const OfferCardArray = () => {
-  const [offers, setOffers] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [page, setPage] = useState(1);
-
-  const fetchAndSetJobs = async (targetPage) => {
-    try {
-      const { filteredOffers } = await getJobs(targetPage);
-      setOffers(filteredOffers);
-      setLoading(false);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchAndSetJobs(page);
-  }, [page]);
-
-  const handleShowMore = () => {
-    setPage((prevPage) => prevPage + 1);
-    setLoading(true);
-  };
-
-  const handleShowPrevious = () => {
-    if (page > 1) {
-      setPage((prevPage) => prevPage - 1);
-      setLoading(true);
-    }
-  };
-
-  return (
-    <div className="flex flex-col gap-16">
-      {loading ? (
-        <div>
-          {[...Array(5)].map((_, index) => <LoadingCard key={index} />)}
-        </div>
-      ) : (
-        <div>
-          {offers.map((job, index) => (
-            <OfferCard
-              key={index}
-              title={job.title}
-              location={`${job.city} - ${job.state} | ${job.branch} | ${job.custom_fields[0]?.resposta || "Presencial"} | ${job.pub_date}`}
-              description={job.description}
-              job={job}
-            />
-          ))}
-        </div>
-      )}
-      <div className="flex justify-center gap-6 mb-16 cursor-pointer [&>*]:px-6 [&>*]:py-2 [&>*]:text-base [&>*]:rounded-[7%] [&>*]:text-white">
-        <button onClick={handleShowPrevious} disabled={page === 1} className="bg-[var(--green-wellow)]">
-          Anterior
-        </button>
-        <button onClick={handleShowMore} disabled={page === 12} className="bg-[var(--purple-wellow)]">
-          Próxima
-        </button>
-      </div>
-    </div>
-  );
-};
-
-export default OfferCardArray;
+export default OfferCard;

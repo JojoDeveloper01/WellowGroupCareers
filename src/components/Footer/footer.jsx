@@ -2,11 +2,11 @@ import "./footer.css";
 
 export default function Header() {
 	return (
-		<section class='footer-section'>
-			<div class='footer-element footer-element-container'>
-				<div class='element-spacing-column'>
-					<div class='wellowgroup-logo-space'>
-						<div class='logo-wellow'>
+		<section className='footer-section'>
+			<div className='footer-element footer-element-container'>
+				<div className='element-spacing-column'>
+					<div className='wellowgroup-logo-space'>
+						<div className='logo-wellow'>
 							<a href='https://wellowgroup.com/en/'>
 								<img
 									width='200'
@@ -20,7 +20,7 @@ export default function Header() {
 						</div>
 					</div>
 
-					<div class='footer-text-space text'>
+					<div className='footer-text-space text'>
 						<p>
 							{" "}
 							Somos a Wellow™, um grupo empresarial de 12 empresas, 6 marcas
@@ -30,34 +30,34 @@ export default function Header() {
 						</p>
 					</div>
 
-					<div class='footer-element-container'>
-						<div cla>
-							<div class='social-icons'>
+					<div className='footer-element-container'>
+						<div>
+							<div className='social-icons'>
 								<a
 									href='https://www.instagram.com/WellowGroup/'
 									target='_blank'
-									class='social-icon'
+									className='social-icon'
 								>
-									<img src='instagram.svg' class='svg-icon' alt='Icon'></img>
+									<img src='instagram.svg' className='svg-icon' alt='Icon'></img>
 								</a>
 								<a
 									href='https://www.linkedin.com/company/wellow%E2%84%A2-group/?originalSubdomain=pt'
 									target='_blank'
-									class='social-icon'
+									className='social-icon'
 								>
-									<img src='linkdin.svg' class='svg-icon' alt='Icon' fill></img>
+									<img src='linkdin.svg' className='svg-icon' alt='Icon'></img>
 								</a>
 								<a
 									href='https://www.youtube.com/channel/UCgd7uPiw0psK_KrPOcqCqvQ'
 									target='_blank'
-									class='social-icon'
+									className='social-icon'
 								>
-									<img src='youtube.svg' class='svg-icon' alt='Icon' fill></img>
+									<img src='youtube.svg' className='svg-icon' alt='Icon'></img>
 								</a>
 							</div>
 						</div>
 
-						<button class='element-widget-wrap club-wellow-button'>
+						<button className='element-widget-wrap club-wellow-button'>
 							<a href='https://club.wellowgroup.com/' target='_blank'>
 								<span> Wellow™ Club</span>
 							</a>
@@ -65,11 +65,11 @@ export default function Header() {
 					</div>
 				</div>
 
-				<div class='element-spacing-column2'>
-					<section class='elements-group-container'>
-						<div class='footer-element-container'>
-							<div class='element-flex-column092023'>
-								<div class='element-flex-column'>
+				<div className='element-spacing-column2'>
+					<section className='elements-group-container'>
+						<div className='footer-element-container'>
+							<div className='element-flex-column092023'>
+								<div className='element-flex-column'>
 									<h3>SOBRE NÓS</h3>
 									<ul>
 										<li>
@@ -109,8 +109,8 @@ export default function Header() {
 								</div>
 							</div>
 
-							<div class='element-flex-column092023'>
-								<div class='element-flex-column'>
+							<div className='element-flex-column092023'>
+								<div className='element-flex-column'>
 									<h3>INFORMAÇÕES LEGAIS</h3>
 									<ul>
 										<li>
@@ -134,8 +134,8 @@ export default function Header() {
 								</div>
 							</div>
 
-							<div class='element-flex-column092023 list-images'>
-								<div class='element-flex-column'>
+							<div className='element-flex-column092023 list-images'>
+								<div className='element-flex-column'>
 									<p>
 										<a
 											href='https://www.livroreclamacoes.pt/Inicio/'
@@ -143,7 +143,7 @@ export default function Header() {
 											rel='noopener'
 										>
 											<img
-												class='alignnone wp-image-9493 size-medium'
+												className='alignnone wp-image-9493 size-medium'
 												src='https://wellowgroup.com/wp-content/uploads/2019/10/livro_reclamacoes-500x-207-w-1-300x124.png'
 												alt=''
 												width='300'
@@ -155,7 +155,7 @@ export default function Header() {
 									<p>
 										<img
 											loading='lazy'
-											class='alignnone wp-image-10206'
+											className='alignnone wp-image-10206'
 											title=''
 											src='https://wellowgroup.com/wp-content/uploads/2022/09/ISO-9001-14001-IQNET-PRETO-300x148.png'
 											alt=''

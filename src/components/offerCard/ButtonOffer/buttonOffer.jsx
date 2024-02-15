@@ -7,16 +7,16 @@ export default function ButtonOffer({ job }) {
     return null;
   }
 
-  const URL = `/${encodeURI(
-    job.internal_job_title
-      .replace(/-{2,}/g, "-")
-      .replace(/\s+/g, "")
-      .replace(/\//g, "-")
-      .replace(/[A-Z]/g, match => match.toLowerCase())
-  )}`;
+  const formattedTitle = job.internal_job_title
+    .replace(/-{2,}/g, "-")
+    .replace(/\s+/g, "")
+    .replace(/\//g, "-")
+    .toLowerCase();
+
+  const URL = `/jobs/${encodeURIComponent(formattedTitle)}-${job.ref_number}`;
 
   return (
-    <Link key={job.id} href={URL}>
+    <Link href={URL}>
       <button className='mr-2 btn-secondary' style={{ height: "45px" }}>
         Ver Oferta
       </button>

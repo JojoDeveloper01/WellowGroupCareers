@@ -47,6 +47,10 @@ button:hover {
   transform: translateY(-6%);
 }
 
+input {
+  cursor: pointer;
+}
+
 a {
   color: #2D2D2D;
   text-decoration: none;

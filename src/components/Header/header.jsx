@@ -1,7 +1,15 @@
+"use client"
 import Link from "next/link";
+import { useState } from "react";
 import "./header.css";
 
 export default function Header() {
+	const [fieldValue, setFieldValue] = useState('initialValue');
+
+	const handleChange = (event) => {
+		setFieldValue(event.target.value);
+	};
+
 	return (
 		<header className='fixed top-0 bg-[#fffffffa] z-[2]'>
 			<nav className='shadow-axl h-[9.3rem] max-[572px]:h-[8rem] max-[425px]:h-[6.5rem] max-[375px]:h-[6rem] max-[320px]:h-[5.5rem] w-screen'>
@@ -15,26 +23,11 @@ export default function Header() {
 							/>
 						</Link>
 					</div>
-					<button className='absolute hidden w-8 h-8 max-[1199px]:block'>
-						<svg
-							xmlns='http://www.w3.org/2000/svg'
-							width='28'
-							height='28'
-							viewBox='0 0 24 24'
-							strokeWidth='2'
-							stroke='currentColor'
-							fill='none'
-							strokeLinecap='round'
-							strokeLinejoin='round'
-						>
-							<path stroke='none' d='M0 0h24v24H0z' fill='none' />
-							<path d='M4 6l16 0' />
-							<path d='M4 12l16 0' />
-							<path d='M4 18l16 0' />
-						</svg>{" "}
+					<button className='absolute hidden size-12 max-[1199px]:block'>
+						<svg data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path d="M97.092 36.078H30.908a2.111 2.111 0 0 0 0 4.222h66.184a2.111 2.111 0 0 0 0-4.222zM97.092 61.889H30.908a2.111 2.111 0 0 0 0 4.222h66.184a2.111 2.111 0 0 0 0-4.222zM97.092 87.7H30.908a2.111 2.111 0 0 0 0 4.222h66.184a2.111 2.111 0 0 0 0-4.222z" /></svg>
 					</button>
 					<input
-						className='absolute hidden opacity-0 w-8 h-8 max-[1199px]:block'
+						className='absolute hidden opacity-0 size-8 max-[1199px]:block'
 						type='checkbox'
 					/>
 					<div className='menuNav flex max-[1199px]:hidden max-[1199px]:flex-col justify-center items-center ml-[76px]'>
@@ -102,21 +95,9 @@ export default function Header() {
 							</Link>
 						</div>
 					</div>
-					<button className='absolute max-[1199px]:mr-[10%] right-[9.3%] translate-x-[-56%]'>
-						<svg
-							xmlns='http://www.w3.org/2000/svg'
-							width='28'
-							height='28'
-							viewBox='0 0 24 24'
-							stroke-width='2'
-							stroke='currentColor'
-							fill='none'
-							stroke-linecap='round'
-							stroke-linejoin='round'
-						>
-							<path stroke='none' d='M0 0h24v24H0z' fill='none' />
-							<path d='M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0' />
-							<path d='M21 21l-6 -6' />
+					<button className='absolute size-8 max-[1199px]:mr-[10%] right-[9.3%] translate-x-[-56%]'>
+						<svg className="size-full" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+							<path d="M 21 3 C 11.621094 3 4 10.621094 4 20 C 4 29.378906 11.621094 37 21 37 C 24.710938 37 28.140625 35.804688 30.9375 33.78125 L 44.09375 46.90625 L 46.90625 44.09375 L 33.90625 31.0625 C 36.460938 28.085938 38 24.222656 38 20 C 38 10.621094 30.378906 3 21 3 Z M 21 5 C 29.296875 5 36 11.703125 36 20 C 36 28.296875 29.296875 35 21 35 C 12.703125 35 6 28.296875 6 20 C 6 11.703125 12.703125 5 21 5 Z"></path>
 						</svg>
 					</button>
 					<input
@@ -142,7 +123,8 @@ export default function Header() {
 									placeholder='Pesquisar'
 									value=''
 									name='s'
-									autocomplete='off'
+									autoComplete='off'
+									onChange={handleChange}
 								/>
 								<span
 									role='search'
@@ -155,7 +137,6 @@ export default function Header() {
 									aria-controls='search-65afa0693139c'
 									aria-expanded='true'
 								>
-									<i className='lqd-icn-ess icon-ld-search'></i>
 								</span>
 								<input type='hidden' name='post_type' value='post' />
 							</form>

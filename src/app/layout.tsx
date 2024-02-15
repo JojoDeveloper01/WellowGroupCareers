@@ -1,4 +1,5 @@
 // ./src/app/layout.tsx
+import { JobProvider } from '@/API/JobContext'; // Import the JobProvider
 import Footer from '@/components/Footer/footer';
 import Header from '@/components/Header/header';
 import '@/fonts/uaf.css';
@@ -17,14 +18,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt">
-      <body>
-        <Header />
-        <main style={{ marginTop: "var(--height-header)" }}>
-          {children}
-        </main>
-        <Footer />
-      </body>
-    </html>
+    <JobProvider>
+      <html lang="pt">
+        <body>
+          <Header />
+          <main style={{ marginTop: "var(--height-header)" }}>
+            {children}
+          </main>
+          <Footer />
+        </body>
+      </html>
+    </JobProvider>
   );
 }
