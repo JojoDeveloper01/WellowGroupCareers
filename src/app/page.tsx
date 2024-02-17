@@ -1,9 +1,9 @@
 "use client"
-import { useJobContext } from '@/API/JobContext';
 import LoadingCard from '@/components/offerCard/loadingCard';
 import OfferCard from "@/components/offerCard/offerCard";
 import SearchBar from "@/components/searchBar/searchBar";
 import { Key, useState } from "react";
+import { useJobContext } from './JobContext';
 import "./page.css";
 
 export default function Home() {

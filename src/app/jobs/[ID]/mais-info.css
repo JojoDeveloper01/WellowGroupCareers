@@ -1,3 +1,20 @@
+.loading {
+  width: 63rem;
+  height: 100rem;
+}
+
+@media only screen and (max-width: 1199px) {
+  .loading {
+    width: 80vw;
+  }
+}
+
+@media only screen and (max-width: 809px) {
+  .loading {
+    width: 100vw;
+  }
+}
+
 .paper {
   border-radius: 1%;
   box-shadow: 0px 4px 32px rgb(0 0 0 / 15%);
@@ -6,7 +23,7 @@
 .paper h2 {
   display: flex;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
   color: #753bbd;
   font-weight: 700;
 }
@@ -32,15 +49,10 @@
   color: #FFFF;
 }
 
-.paper li {
-  margin-bottom: 13px;
-  opacity: 0.8;
-  font-weight: 500;
-}
-
 .paper p {
   opacity: 0.7;
   font-weight: 500;
+  margin: 18px 0;
 }
 
 .a2a_default_style:not(.a2a_flex_style) a {
@@ -67,10 +79,4 @@
 
 .a2a_svg svg {
   display: block;
-}
-
-@media only screen and (max-width:507px) {
-  .sliderImg {
-    width: 100VW;
-  }
 }

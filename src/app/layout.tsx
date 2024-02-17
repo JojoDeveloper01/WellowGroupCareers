@@ -1,10 +1,10 @@
 // ./src/app/layout.tsx
-import { JobProvider } from '@/API/JobContext'; // Import the JobProvider
 import Footer from '@/components/Footer/footer';
 import Header from '@/components/Header/header';
 import '@/fonts/uaf.css';
 import type { Metadata } from 'next';
 import React from 'react';
+import { JobProvider } from './JobContext';
 import './globals.css';
 
 export const metadata: Metadata = {

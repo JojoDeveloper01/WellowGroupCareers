@@ -32,8 +32,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/API/getJob.js",
-    "src/API/getJob.js"
+    "src/app/JobContext.jsx",
+    "src/app/api/get-jobs/route.ts",
   ],
   "exclude": [
     "node_modules"
