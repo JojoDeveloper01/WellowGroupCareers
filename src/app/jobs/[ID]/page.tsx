@@ -13,16 +13,6 @@ interface JobInfoPageProps {
   };
 }
 
-interface Offer {
-  ref_number: string;
-  title: string;
-  location: string;
-  description: string;
-  requirements: string;
-  annotation: string;
-  // Adicione outros campos, se necessário
-}
-
 export default function JobInfoPage({ params }: JobInfoPageProps) {
   const [showForm, setShowForm] = useState(false);
   const { offers, loading } = useJobContext();
