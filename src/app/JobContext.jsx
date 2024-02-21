@@ -13,13 +13,15 @@ export const JobProvider = ({ children }) => {
   const [searchResultsEmpty, setSearchResultsEmpty] = useState(false)
 
   useEffect(() => {
-    // Função para buscar dados da API
+    // Função para buscar dados da API de JobConvo
     const fetchData = async () => {
       try {
         const response = await fetch('/api/get-jobs');
         const data = await response.json();
-        setOffers(data.jobs);
-        setAllOffers(data.jobs);
+        const sortedJobs = data.jobs.sort((a, b) => b.ref_number - a.ref_number); // Ordenar os jobs pelo ref_number de forma decrescente
+
+        setOffers(sortedJobs);
+        setAllOffers(sortedJobs);
         setLoading(false);
       } catch (error) {
         console.error('Erro ao buscar dados da API:', error);

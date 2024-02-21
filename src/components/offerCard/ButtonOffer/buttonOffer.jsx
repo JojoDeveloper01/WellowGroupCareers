@@ -13,7 +13,7 @@ export default function ButtonOffer({ job }) {
     .replace(/\//g, "-")
     .toLowerCase();
 
-  const URL = `/jobs/${encodeURIComponent(formattedTitle)}-${job.ref_number}`;
+  const URL = `/${encodeURIComponent(formattedTitle)}-${job.ref_number}`;
 
   return (
     <Link href={URL}>
